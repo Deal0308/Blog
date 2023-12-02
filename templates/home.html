@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <h1>Home</h1>
+    <p class="lead">Welcome to <a href="
+        {% url 'home' %}">Django Blog</a>!</p>
+
+
+    {% if user.is_authenticated %}
+        <p>You are logged in as {{ user.username }}.</p>
+    {% else %}
+        <p>You are not logged in. Would you like to <a href="{% url 'login' %}">log in</a> or <a href="{% url 'signup' %}">sign up</a>?</p>
+    {% endif %}
+{% endblock content %}
