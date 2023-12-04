@@ -1,4 +1,5 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import (
+    ListView, DetailView, CreateView, UpdateView, DeleteView,)
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 
@@ -6,20 +7,30 @@ from .models import Post
 
 # Create your views here.
 
-class BlogListView(ListView):
+class PostListView(ListView):
     model = Post
-    template_name = 'home.html'
+    template_name = 'posts/list.html'
     context_object_name = 'all_posts_list'
-    ordering = ['-created_on']
 
-class BlogDetailView(DetailView):
+class PostDetailView(DetailView):
     model = Post
-    template_name = 'detail.html'
-    context_object_name = 'all_posts_list'
-    ordering = ['-created_on']
+    template_name = 'posts/detail.html'
 
-class BlogCreateView(CreateView):
+class PostCreateView(CreateView):
     model = Post
-    template_name = 'post_new.html'
+    template_name = 'posts/new.html'
     fields = ['title', 'subtitle', 'author', 'body']
-    success_url = reverse_lazy('home')
+
+class PostUpdateView(UpdateView):
+    model = Post
+    template_name = 'posts/edit.html'
+    fields = ['title', 'subtitle', 'body']
+
+class PostDeleteView(DeleteView):
+    model = Post
+    template_name = 'posts/delete.html'
+    success_url = reverse_lazy('list')
+
+
+
+
