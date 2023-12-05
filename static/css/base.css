@@ -1,36 +1,56 @@
+/* styles.css */
 
-/* create a better color and layout */
-
-body {
-    background-color: #f5f5f5;
-    padding-top: 60px;
-    padding-bottom: 40px;
-}
-
-/* customize container */
-
-.container-narrow {
-    margin: 0 auto;
-    max-width: 700px;
-}
-
-.container-narrow > hr {
-    margin: 30px 0;
-}
-
-/* main marketing message and sign up button */
-
-.jumbotron {
-    margin: 60px 0;
+/* Reset some default styles for better cross-browser consistency */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Set a global font family and background color */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Style the header */
+  header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 20px;
     text-align: center;
-}
-
-.jumbotron h1 {
-    font-size: 72px;
-    line-height: 1;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
+  }
+  
+  /* Style the main content container */
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style links */
+  a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style buttons */
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    background-color: #2980b9;
+  }
+  
