@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)7a92q%3p!6d9-ab*vm%%qp)-29kzy$p_zxi9jv2rif-2h)(w1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.herokuapp.com']
 
 
 # Application definition
@@ -126,3 +126,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'list'
 # LOGOUT_REDIRECT_URL = 'login'
+
+Email_BACKEND = 'django.core.mail.backends.console.EmailBackend'

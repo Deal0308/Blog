@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ post.title }}{% endblock title %}
+{% block title %}Posts{% endblock title %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
-    <p>By {{ post.author }} on {{ post.created_on }}</p>
-    <p>{{ post.body|linebreaks }}</p>
-
-    <h2>Comments</h2>
-    {% for comment in comments %}
-        <p> {{ comment.author }} </p>
-        <p> {{ comment.body }} </p>
+    <h1>Posts</h1>
+    
+<ul>
+    {% for post in post_list %}
+    <li>{{ post.title }}</li>
     {% endfor %}
+
+</ul>
+
+    
 
 
 {% endblock content %}

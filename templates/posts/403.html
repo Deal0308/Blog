@@ -1,0 +1,10 @@
+{% extends 'templates/default.php' %}
+
+{% block title %}Forbidden (403){% endblock title %}
+
+{% block content %}
+<h1>Forbidden</h1>
+    <p>403: Access forbidden, you do not have access to this page</p>
+
+    <p><a href="{{ urlFor('home') }}">Return to the homepage</a></p>
+{% endblock %}
