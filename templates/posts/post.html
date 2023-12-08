@@ -1,4 +1,16 @@
 {% extends 'base.html' %}
+<!-- have this page look more like a pro blog/news site -->
+{% load static %}
+{% block content %}
+    <h1>Blog</h1>
+    {% for post in posts %}
+        <h2>
+            <a href="{% url 'post.detail' %}">{{ post.title }}</a>
+        </h2>
+        <p class="date">Published {{ post.created_on|date:"F d, Y" }}</p>
+        <p>{{ post.body|truncatewords:30|linebreaks }}</p>
+    {% endfor %}
+{% endblock content %}
 
 {% block title %}{{ post.title }}{% endblock title %}
 
@@ -6,4 +18,5 @@
     <h1>{{ post.title }}</h1>
     <p>By {{ post.author }} on {{ post.created_on }}</p>
     <p>{{ post.body|linebreaks }}</p>
+
 {% endblock content %}

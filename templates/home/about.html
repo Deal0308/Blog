@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+<!-- this is the about page for our blog site -->
+
+{% block title %}About{% endblock title %}
+{% load static %}
+
+{% block content %}
+    <h1>About</h1>
+    <!-- add image from my static img file here to-->
+    <img src="{% static 'img/backdouble.jpeg' %}" alt="" width="500" height="600">
+    
+    <p>This is the about page for our bodybuilding news blog site.</p>
+{% endblock content %}

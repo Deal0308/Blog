@@ -5,12 +5,36 @@ body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
   }
+
+/* Custom styles for the navbar */
+body {
+    padding-top: 56px; /* Adjust body padding to match the height of the fixed navbar */
+}
+
+.navbar-custom {
+    background-color: #3498db; /* Change the background color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-nav .nav-link {
+    color: #2c2828; /* Set text color to white */
+}
+
+.navbar-custom .navbar-toggler-icon {
+    background-color: #302d2d; /* Set the hamburger icon color to white */
+}
+
+.navbar-custom .navbar-toggler {
+    border-color: #2f2929; /* Set the border color of the hamburger button */
+}
+
   
   /* Set a global font family and background color */
   body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #2a2727;
+    color: #ede7e7;
   }
   
   /* Style the header */
@@ -26,9 +50,27 @@ body, h1, h2, p, ul, li {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #3a3636;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+    .flex-container > div {
+        background-color: #696161;
+        width: 100%;
+        margin: 10px;
+        text-align: center;
+        line-height: 75px;
+        font-size: 30px;
+    }
+
+    .flex-container > div > a {
+        color: #3498db;
+        text-decoration: none;
+    }
   
   /* Style links */
   a {
@@ -53,4 +95,4 @@ body, h1, h2, p, ul, li {
   .button:hover {
     background-color: #2980b9;
   }
-  
+

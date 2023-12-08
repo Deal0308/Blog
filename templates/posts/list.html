@@ -8,6 +8,11 @@
 <ul>
     {% for post in post_list %}
     <li>{{ post.title }}</li>
+    <li>{{ post.subtitle }}</li>
+    <li>{{ post.author }}</li>
+    <li>{{ post.created_on }}</li>
+    <li>{{ post.body }}</li>
+
     {% endfor %}
 
 </ul>
