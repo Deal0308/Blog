@@ -96,3 +96,57 @@ body {
     background-color: #2980b9;
   }
 
+/* Add some styles to improve the overall look of the posts */
+.container {
+  margin-top: 20px;
+}
+
+.card {
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Style the edit and delete buttons */
+.btn-group {
+  margin-top: 10px;
+}
+
+.btn-primary,
+.btn-danger {
+  margin-right: 5px;
+}
+
+/* Add some spacing to the page */
+mt-4 {
+  margin-top: 20px !important;
+}
+
+
+/* Add styles for the custom cursor */
+body {
+  cursor: none;
+}
+
+#custom-cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff3366;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+#custom-cursor.hovered {
+  transform: scale(1.5);
+  background-color: #33ccff;
+}
+
+#custom-cursor.clicked {
+  transform: scale(0.8);
+  background-color: #ffff66;
+}

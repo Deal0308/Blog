@@ -1,22 +1,24 @@
 {% extends 'base.html' %}
-<!-- have this page look more like a pro blog/news site -->
 {% load static %}
-{% block content %}
-    <h1>Blog</h1>
-    {% for post in posts %}
-        <h2>
-            <a href="{% url 'post.detail' %}">{{ post.title }}</a>
-        </h2>
-        <p class="date">Published {{ post.created_on|date:"F d, Y" }}</p>
-        <p>{{ post.body|truncatewords:30|linebreaks }}</p>
-    {% endfor %}
-{% endblock content %}
-
-{% block title %}{{ post.title }}{% endblock title %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
-    <p>By {{ post.author }} on {{ post.created_on }}</p>
-    <p>{{ post.body|linebreaks }}</p>
-
+    <div class="row">
+        {% for post in posts %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="{% if post.image %}{{ post.image.url }}{% else %}{% static 'images/default.jpg' %}{% endif %}" alt="{{ post.title }}" class="card-img-top">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p class="card-text">{{ post.body|truncatechars:100 }}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'post.detail' post.id %}" class="btn btn-sm btn-outline-secondary">Read More</a>
+                            </div>
+                            <small class="text-muted">Published on {{ post.created_on|date:"F d, Y" }}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 {% endblock content %}

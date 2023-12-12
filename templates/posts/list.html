@@ -3,21 +3,28 @@
 {% block title %}Posts{% endblock title %}
 
 {% block content %}
-    <h1>Posts</h1>
-    
-<ul>
-    {% for post in post_list %}
-    <li>{{ post.title }}</li>
-    <li>{{ post.subtitle }}</li>
-    <li>{{ post.author }}</li>
-    <li>{{ post.created_on }}</li>
-    <li>{{ post.body }}</li>
+    <div class="container">
+        <h1 class="mt-4">Posts</h1>
 
-    {% endfor %}
-
-</ul>
-
-    
-
-
+        <div class="row mt-4">
+            {% for post in post_list %}
+                <div class="col-md-6">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ post.title }}</h2>
+                            <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle }}</h6>
+                            <p class="card-text">{{ post.body|truncatechars:150 }}</p>
+                            <p class="card-text"><strong>Author:</strong> {{ post.author }}</p>
+                            <p class="card-text"><strong>Created on:</strong> {{ post.created_on }}</p>
+                            <p class="card-text"><strong>Status:</strong> {{ post.status }}</p>
+                            <div class="btn-group">
+                                <a href="{% url 'edit' post.pk %}" class="btn btn-primary">Edit</a>
+                                <a href="{% url 'delete' post.pk %}" class="btn btn-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock content %}
