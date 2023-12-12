@@ -150,3 +150,11 @@ body {
   transform: scale(0.8);
   background-color: #ffff66;
 }
+
+/* Add this in your existing CSS file or create a new one (e.g., styles.css) */
+#benchPressCanvas {
+  border: 15px solid #000;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
